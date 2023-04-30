@@ -1,12 +1,24 @@
 import java.awt.*;
 
+/**
+ * Represents the game board object
+ * Initializes the array of {@link #cells}, draws the initial game UI and checks for draw/win conditions
+ */
 public class Board {
-	// grid line width
+	//Board Constants
+	/**Set the grid line width */
 	public static final int GRID_WIDTH = 8;
+<<<<<<< Updated upstream
 	// grid line half width
 	public static final int GRID_WIDHT_HALF = GRID_WIDTH / 2;
 	
 	//2D array of ROWS-by-COLS Cell instances
+=======
+	/**Set the grid line half width */
+	public static final int GRID_WIDTH_HALF = GRID_WIDTH / 2;
+
+	/** 2D array of ROWS-by-COLS Cell instances */
+>>>>>>> Stashed changes
 	Cell [][] cells;
 	
 	/** Constructor to create the game board */
@@ -26,11 +38,31 @@ public class Board {
 	 /** Return true if it is a draw (i.e., no more EMPTY cells) */ 
 	public boolean isDraw() {
 		 
+<<<<<<< Updated upstream
 		// TODO: Check whether the game has ended in a draw. 
 		// Hint: Use a nested loop (see the constructor for an example). Check whether any of the cells content in the board grid are Player.Empty. If they are, it is not a draw.
 		// Hint: Return false if it is not a draw, return true if there are no empty positions left
 		   
 		
+=======
+		// Check whether the game has ended in a draw. 
+		// Check whether any of the cells content in the board grid are Player.Empty. If they are, it is not a draw.
+		// Return false if it is not a draw, return true if there are no empty positions left
+		boolean drawStatus = false;
+		for (int row = 0; row < GameMain.ROWS; ++row) {
+			for (int col = 0; col < GameMain.COLS; ++col) {
+				//if an empty cell is found, game cannot be a draw yet.
+				if(cells[row][col].content == Player.Empty){
+					return false;
+				}
+				//if this cell is the last one on the board to check && its not empty then game is a draw
+				if(row == GameMain.ROWS - 1 && col == GameMain.COLS - 1){
+					drawStatus = true;
+				}
+			}
+		}
+		return drawStatus;   
+>>>>>>> Stashed changes
 
 		
 	}
