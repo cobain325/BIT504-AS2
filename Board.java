@@ -1,12 +1,17 @@
 import java.awt.*;
 
+/**
+ * Represents the game board object
+ * Initializes the array of {@link #cells}, draws the initial game UI and checks for draw/win conditions
+ */
 public class Board {
-	// grid line width
+	//Board Constants
+	/**Set the grid line width */
 	public static final int GRID_WIDTH = 8;
-	// grid line half width
+	/**Set the grid line half width */
 	public static final int GRID_WIDTH_HALF = GRID_WIDTH / 2;
-	
-	//2D array of ROWS-by-COLS Cell instances
+
+	/** 2D array of ROWS-by-COLS Cell instances */
 	Cell [][] cells;
 	
 	/** Constructor to create the game board */
@@ -31,17 +36,19 @@ public class Board {
 		boolean drawStatus = false;
 		for (int row = 0; row < GameMain.ROWS; ++row) {
 			for (int col = 0; col < GameMain.COLS; ++col) {
+      
+				//if an empty cell is found, game cannot be a draw yet.
 				if(cells[row][col].content == Player.Empty){
 					return false;
 				}
+				//if this cell is the last one on the board to check && its not empty then game is a draw
+        
 				if(row == GameMain.ROWS - 1 && col == GameMain.COLS - 1){
 					drawStatus = true;
 				}
 			}
 		}
-		return drawStatus;   
-
-		
+		return drawStatus;   	
 	}
 	
 	/** Return true if the current player "thePlayer" has won after making their move  */

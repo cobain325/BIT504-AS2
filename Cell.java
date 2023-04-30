@@ -3,8 +3,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
+/** Cell Class
+ * Represents an instance of a cell on the game {@link Board}
+ */
 public class Cell {
-    //content of this cell (empty, cross, nought)
+    /** Content of this {@link Cell} (empty, cross, nought) */
 	Player content;
 	//row and column of this cell
 	int row, col;
@@ -45,7 +48,7 @@ public class Cell {
 	/** Set this cell's content to EMPTY */
 	public void clear() {
 		
-		//Set the value of content to Empty
+		//Set the value of content to Player.Empty
 		content = Player.Empty;
 		
 	}

@@ -3,5 +3,10 @@
  */
 
 public enum Player {
-	Empty, Cross, Nought
+	/** Empty Cell */
+	Empty,
+	/** Cell played by "X" */ 
+	Cross,
+	/** Cell played by "O" */  
+	Nought
 }
